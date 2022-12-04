@@ -4,7 +4,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: http://localhost:3000/api/v1
+- url: https://wild-teal-drill-gear.cyclic.app/
   variables: {}
 paths:
   /register:
@@ -238,8 +238,6 @@ components:
         product_name: Shoe 16
         price: 3800
 tags:
-- name: Misc
-  description: ''
 - name: Auth
   description: ''
 - name: Product
