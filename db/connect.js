@@ -14,6 +14,6 @@ const Sequelize = require('sequelize')
 // })
 //npm install --save mysql2
 
-const sequelize = new Sequelize('mysql://ukihhc3aiannxdgy:vZnYWqjDylvTVDn0mYDE@bsfh0cq02jl3mqkau4kt-mysql.services.clever-cloud.com:3306/bsfh0cq02jl3mqkau4kt')
+const sequelize = new Sequelize('mysql://ue8yqsvijquk6kvp:fMn7xZKeGuUiktI5O31M@bwbk0ztg3kwrg9xasy62-mysql.services.clever-cloud.com:3306/bwbk0ztg3kwrg9xasy62')
 
 module.exports = sequelize
