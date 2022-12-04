@@ -1,0 +1,246 @@
+openapi: 3.0.0
+info:
+  title: LEARNING SQL
+  contact: {}
+  version: '1.0'
+servers:
+- url: http://localhost:3000/api/v1
+  variables: {}
+paths:
+  /register:
+    post:
+      tags:
+      - Auth
+      summary: REGISTER
+      operationId: REGISTER
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/REGISTERREQUEST'
+              - example:
+                  username: steve2
+                  email: steve2@gmail.com
+                  password: steve123
+            example:
+              username: steve2
+              email: steve2@gmail.com
+              password: steve123
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /login:
+    post:
+      tags:
+      - Auth
+      summary: LOGIN
+      operationId: LOGIN
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/LOGINREQUEST'
+              - example:
+                  email: steve2@gmail.com
+                  password: steve123
+            example:
+              email: steve2@gmail.com
+              password: steve123
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /product:
+    post:
+      tags:
+      - Product
+      summary: CREATE PRODUCT
+      operationId: CREATEPRODUCT
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CREATEPRODUCTREQUEST'
+              - example:
+                  product_name: Shoe 12
+                  price: '3600'
+            example:
+              product_name: Shoe 12
+              price: '3600'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    get:
+      tags:
+      - Product
+      summary: ALL PRODUCTS
+      operationId: ALLPRODUCTS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /product/{id}:
+    get:
+      tags:
+      - Product
+      summary: GET SINGLE PRODUCT
+      operationId: GETSINGLEPRODUCT
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    patch:
+      tags:
+      - Product
+      summary: UPDATE PRODUCT
+      operationId: UPDATEPRODUCT
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UPDATEPRODUCTREQUEST'
+              - example:
+                  product_name: Shoe 16
+                  price: 3800
+            example:
+              product_name: Shoe 16
+              price: 3800
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    delete:
+      tags:
+      - Product
+      summary: DELETE PRODUCT
+      operationId: DELETEPRODUCT
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    REGISTERREQUEST:
+      title: REGISTERREQUEST
+      required:
+      - username
+      - email
+      - password
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        username: steve2
+        email: steve2@gmail.com
+        password: steve123
+    LOGINREQUEST:
+      title: LOGINREQUEST
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: steve2@gmail.com
+        password: steve123
+    CREATEPRODUCTREQUEST:
+      title: CREATEPRODUCTREQUEST
+      required:
+      - product_name
+      - price
+      type: object
+      properties:
+        product_name:
+          type: string
+        price:
+          type: string
+      example:
+        product_name: Shoe 12
+        price: '3600'
+    UPDATEPRODUCTREQUEST:
+      title: UPDATEPRODUCTREQUEST
+      required:
+      - product_name
+      - price
+      type: object
+      properties:
+        product_name:
+          type: string
+        price:
+          type: integer
+          format: int32
+      example:
+        product_name: Shoe 16
+        price: 3800
+tags:
+- name: Misc
+  description: ''
+- name: Auth
+  description: ''
+- name: Product
+  description: ''
