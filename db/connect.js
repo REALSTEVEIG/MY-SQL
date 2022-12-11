@@ -20,21 +20,21 @@ require('dotenv').config()
 
 
 //USING AWS FOR POSTGRESQL
-// const sequelize = new Sequelize(
-//     process.env.POSTGRESQL_NAME, 
-//     process.env.POSTGRESQL_ADMIN,
-//     process.env.POSTGRESQL_PASSWORD, {
-//     host :  process.env.POSTGRESQL_DB_HOST,
-//     dialect : 'postgres'
-// })
+const sequelize = new Sequelize(
+    process.env.POSTGRESQL_NAME, 
+    process.env.POSTGRESQL_ADMIN,
+    process.env.POSTGRESQL_PASSWORD, {
+    host :  process.env.POSTGRESQL_DB_HOST,
+    dialect : 'postgres'
+})
 
 //USING AWS FOR MYSQL
-const sequelize = new Sequelize(
-    process.env.MYSQL_DB_NAME,
-    process.env.MYSQL_DB_ADMIN,
-    process.env.MYSQL_DB_PASSWORD, {
-    host :  process.env.MYSQL_DB_HOST,
-    dialect : 'mysql'
-})
+// const sequelize = new Sequelize(
+//     process.env.MYSQL_DB_NAME,
+//     process.env.MYSQL_DB_ADMIN,
+//     process.env.MYSQL_DB_PASSWORD, {
+//     host :  process.env.MYSQL_DB_HOST,
+//     dialect : 'mysql'
+// })
 
 module.exports = sequelize

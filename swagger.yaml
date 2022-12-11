@@ -4,7 +4,7 @@ info:
   contact: {}
   version: '1.0'
 servers:
-- url: https://wild-teal-drill-gear.cyclic.app/api/v1
+- url: https://aws-sql-api.cyclic.app/api/v1
   variables: {}
 paths:
   /register:
